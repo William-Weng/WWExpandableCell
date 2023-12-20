@@ -13,6 +13,7 @@
 		3DBCD87B26F198EF00522E3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DBCD87926F198EF00522E3B /* Main.storyboard */; };
 		3DBCD87D26F198F300522E3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DBCD87C26F198F300522E3B /* Assets.xcassets */; };
 		3DBCD88026F198F300522E3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DBCD87E26F198F300522E3B /* LaunchScreen.storyboard */; };
+		811181902B32A32400915BA7 /* WWExpandableCell in Frameworks */ = {isa = PBXBuildFile; productRef = 8111818F2B32A32400915BA7 /* WWExpandableCell */; };
 		8180BCBA2B313DAD007A6A71 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180BCB92B313DAD007A6A71 /* MyTableViewCell.swift */; };
 		818F6ECB2B3195B100F9184B /* WWExpandableCell in Frameworks */ = {isa = PBXBuildFile; productRef = 818F6ECA2B3195B100F9184B /* WWExpandableCell */; };
 /* End PBXBuildFile section */
@@ -35,6 +36,7 @@
 			files = (
 				818F6ECB2B3195B100F9184B /* WWExpandableCell in Frameworks */,
 				3DAC9C1927016E78006663C2 /* WWPrint in Frameworks */,
+				811181902B32A32400915BA7 /* WWExpandableCell in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +140,7 @@
 			packageProductDependencies = (
 				3DAC9C1827016E78006663C2 /* WWPrint */,
 				818F6ECA2B3195B100F9184B /* WWExpandableCell */,
+				8111818F2B32A32400915BA7 /* WWExpandableCell */,
 			);
 			productName = Example;
 			productReference = 3DBCD87026F198EF00522E3B /* Example.app */;
@@ -169,6 +172,7 @@
 			mainGroup = 3DBCD86726F198EF00522E3B;
 			packageReferences = (
 				3DAC9C1727016E78006663C2 /* XCRemoteSwiftPackageReference "WWPrint" */,
+				8111818E2B32A32400915BA7 /* XCRemoteSwiftPackageReference "WWExpandableCell" */,
 			);
 			productRefGroup = 3DBCD87126F198EF00522E3B /* Products */;
 			projectDirPath = "";
@@ -419,6 +423,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		8111818E2B32A32400915BA7 /* XCRemoteSwiftPackageReference "WWExpandableCell" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/William-Weng/WWExpandableCell.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -426,6 +438,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3DAC9C1727016E78006663C2 /* XCRemoteSwiftPackageReference "WWPrint" */;
 			productName = WWPrint;
+		};
+		8111818F2B32A32400915BA7 /* WWExpandableCell */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8111818E2B32A32400915BA7 /* XCRemoteSwiftPackageReference "WWExpandableCell" */;
+			productName = WWExpandableCell;
 		};
 		818F6ECA2B3195B100F9184B /* WWExpandableCell */ = {
 			isa = XCSwiftPackageProductDependency;

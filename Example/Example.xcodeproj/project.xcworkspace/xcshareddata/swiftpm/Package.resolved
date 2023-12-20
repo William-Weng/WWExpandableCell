@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "wwexpandablecell",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWExpandableCell.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "76501b6f002ffadab9cd4faff3aa64cce9305293"
+      }
+    },
+    {
       "identity" : "wwprint",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/William-Weng/WWPrint",
