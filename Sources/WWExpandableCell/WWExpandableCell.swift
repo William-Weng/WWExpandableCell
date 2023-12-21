@@ -75,16 +75,13 @@ public extension WWCellExpandable {
         }
         
         let selectedCell = visibleCells.first { $0.indexPath == indexPath }
-                
-        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: duration, delay: delay, options: options , animations: {
+        
+        tableView.performBatchUpdates ({
             let isExpanded = Self.expandedRowAction(selectedCell: selectedCell)
             if (isSingle) { Self.singleExpandedRowAction(visibleCells: visibleCells, selectedIndex: indexPath, isExpanded: isExpanded) }
         }, completion: { _ in
             
         })
-        
-        tableView.beginUpdates()
-        tableView.endUpdates()
     }
 }
 
@@ -115,7 +112,7 @@ private extension WWCellExpandable {
                 isExpanded = true
             } else {
                 sets.remove(indexPath)
-                selectedCell.expandView()?.isHidden = true
+                hiddenAction(cell: selectedCell)
                 isExpanded = false
             }
             
@@ -147,8 +144,21 @@ private extension WWCellExpandable {
                 return
             }
             
-            cell.expandView()?.isHidden = true
+            hiddenAction(cell: cell)
         }
+    }
+    
+    /// Cell的隱藏動作
+    /// - Parameters:
+    ///   - cell: WWCellExpandable
+    ///   - completion: ((UIViewAnimatingPosition) -> Void)?
+    static func hiddenAction(cell: WWCellExpandable, completion: ((UIViewAnimatingPosition) -> Void)? = nil) {
+     
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, options: [.curveEaseInOut] , animations: {
+            cell.expandView()?.isHidden = true
+        }, completion: { position in
+            completion?(position)
+        })
     }
 }
 
