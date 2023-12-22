@@ -10,7 +10,7 @@ import UIKit
 open class WWExpandView: UIView {}
 
 // MARK: - 可以折疊使用Cell的Protocol
-public protocol WWCellExpandable: AnyObject {
+public protocol WWCellExpandable: UITableViewCell {
     
     static var identifier: String { get }
     static var expandRowsList: [Int: Set<IndexPath>] { get set }
