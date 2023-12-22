@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/William-Weng/WWExpandableCell.git",
       "state" : {
-        "revision" : "39e0cc0f11ef9809b27a445cd77827aa89bf2d65",
-        "version" : "1.0.0"
+        "revision" : "c94de755066ad62d6672001624ad4b31471e2196",
+        "version" : "1.1.1"
       }
     },
     {

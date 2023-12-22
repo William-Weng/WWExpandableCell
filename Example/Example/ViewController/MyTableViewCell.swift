@@ -18,7 +18,7 @@ final class MyTableViewCell: UITableViewCell {
     
     var indexPath: IndexPath = []
     
-    private let isSingle = false
+    private let isSingle = true
     
     /// 展開 / 折疊
     /// - Parameter sender: UIButton

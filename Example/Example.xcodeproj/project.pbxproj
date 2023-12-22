@@ -65,7 +65,6 @@
 			children = (
 				3DBCD88A26F1995100522E3B /* Setting */,
 				3DBCD88926F1994500522E3B /* Material */,
-				8130038E27D5D17800436128 /* Utility */,
 				3DBCD88826F1993200522E3B /* Storyboard */,
 				3DBCD88726F1992200522E3B /* ViewController */,
 				3DBCD87326F198EF00522E3B /* AppDelegate.swift */,
@@ -105,13 +104,6 @@
 				3DBCD88126F198F300522E3B /* Info.plist */,
 			);
 			name = Setting;
-			sourceTree = "<group>";
-		};
-		8130038E27D5D17800436128 /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utility;
 			sourceTree = "<group>";
 		};
 		8180BCBB2B313E2A007A6A71 /* Frameworks */ = {
