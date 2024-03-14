@@ -13,7 +13,7 @@ let package = Package(
     dependencies: [
     ],
     targets: [
-        .target(name: "WWExpandableCell", dependencies: []),
+        .target(name: "WWExpandableCell", resources: [.copy("Privacy")]),
     ],
     swiftLanguageVersions: [
         .v5
