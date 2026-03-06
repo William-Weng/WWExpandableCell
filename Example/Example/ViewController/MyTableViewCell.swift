@@ -24,12 +24,13 @@ final class MyTableViewCell: UITableViewCell {
     /// - Parameter sender: UIButton
     @IBAction func expandAction(_ sender: UIButton) {
         guard let myTableView = Self.myTableView else { return }
+        
         MyTableViewCell.exchangeExpandState(myTableView, indexPath: indexPath, isSingle: isSingle)
     }
 }
 
 // MARK: - WWCellExpandable
-extension MyTableViewCell: WWCellExpandable {    
+extension MyTableViewCell: WWCellExpandable {
     
     func configure(with indexPath: IndexPath) {
         self.indexPath = indexPath

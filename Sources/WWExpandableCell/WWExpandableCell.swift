@@ -17,11 +17,10 @@ public protocol WWCellExpandable: UITableViewCell {
     
     var indexPath: IndexPath { get set }
     
-    static func exchangeExpandState(_ tableView: UITableView, indexPath: IndexPath, isSingle: Bool, duration: TimeInterval, delay: TimeInterval, options: UIView.AnimationOptions)
+    static func exchangeExpandState(_ tableView: UITableView, indexPath: IndexPath, isSingle: Bool, duration: TimeInterval, delay: TimeInterval, options: UIView.AnimationOptions, completion: ((Bool) -> Void)?)
     static func expandedCells(section: Int, rowCount: Int)
     static func expandedCell(section: Int, row: Int)
 
-    func configure(with indexPath: IndexPath)
     func expandView() -> WWExpandView?
 }
 
@@ -67,7 +66,8 @@ public extension WWCellExpandable {
     ///   - duration: 動畫時間
     ///   - delay: 動畫延遲時間
     ///   - options: 動畫效果
-    static func exchangeExpandState(_ tableView: UITableView, indexPath: IndexPath, isSingle: Bool, duration: TimeInterval = 0.3, delay: TimeInterval = 0, options: UIView.AnimationOptions = []) {
+    ///   - completion: 動畫完成
+    static func exchangeExpandState(_ tableView: UITableView, indexPath: IndexPath, isSingle: Bool, duration: TimeInterval = 0.3, delay: TimeInterval = 0, options: UIView.AnimationOptions = [], completion: ((Bool) -> Void)? = nil) {
         
         let visibleCells = tableView.visibleCells.compactMap { cell -> WWCellExpandable? in
             guard let cell = cell as? WWCellExpandable else { return nil }
@@ -79,8 +79,8 @@ public extension WWCellExpandable {
         tableView.performBatchUpdates ({
             let isExpanded = Self.expandedRowAction(selectedCell: selectedCell)
             if (isSingle) { Self.singleExpandedRowAction(visibleCells: visibleCells, selectedIndex: indexPath, isExpanded: isExpanded) }
-        }, completion: { _ in
-            
+        }, completion: { isFinsished in
+            completion?(isFinsished)
         })
     }
 }

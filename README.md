@@ -1,6 +1,6 @@
 # WWExpandableCell
 
-[![Swift-5.6](https://img.shields.io/badge/Swift-5.6-orange.svg?style=flat)](https://developer.apple.com/swift/) [![iOS-14.0](https://img.shields.io/badge/iOS-14.0-pink.svg?style=flat)](https://developer.apple.com/swift/) ![TAG](https://img.shields.io/github/v/tag/William-Weng/WWExpandableCell) [![Swift Package Manager-SUCCESS](https://img.shields.io/badge/Swift_Package_Manager-SUCCESS-blue.svg?style=flat)](https://developer.apple.com/swift/) [![LICENSE](https://img.shields.io/badge/LICENSE-MIT-yellow.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift-5.7](https://img.shields.io/badge/Swift-5.7-orange.svg?style=flat)](https://developer.apple.com/swift/) [![iOS-15.0](https://img.shields.io/badge/iOS-15.0-pink.svg?style=flat)](https://developer.apple.com/swift/) ![TAG](https://img.shields.io/github/v/tag/William-Weng/WWExpandableCell) [![Swift Package Manager-SUCCESS](https://img.shields.io/badge/Swift_Package_Manager-SUCCESS-blue.svg?style=flat)](https://developer.apple.com/swift/) [![LICENSE](https://img.shields.io/badge/LICENSE-MIT-yellow.svg?style=flat)](https://developer.apple.com/swift/)
 
 ### [Introduction - 簡介](https://swiftpackageindex.com/William-Weng)
 - Using Protocol to set, the expand/collapse function can be easily realized without affecting the native UITableViewCell function.
@@ -13,7 +13,7 @@
 
 ```bash
 dependencies: [
-    .package(url: "https://github.com/William-Weng/WWExpandableCell.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/William-Weng/WWExpandableCell.git", .upToNextMajor(from: "1.2.0"))
 ]
 ```
 
@@ -21,14 +21,12 @@ dependencies: [
 - The part to be collapsed, use WWExpandView type.
 - 將要折疊的部分，使用WWExpandView類型。
 
-![WWExpandableCell](./Example.png)
-
 ### Function - 可用函式
 |函式|功能|
 |-|-|
 |expandedCells(section:rowCount:)|設定預設值 => 那個section的cell們預設是打開的|
 |expandedCell(section:row:)|設定預設值 => 那一個IndexPath是打開的|
-|exchangeExpandState(_:indexPath:isSingle:duration:delay:options:)|交換展開狀態|
+|exchangeExpandState(_:indexPath:isSingle:duration:delay:options:completion:)|交換展開狀態|
 
 ### Example - 程式範例
 ```swift
