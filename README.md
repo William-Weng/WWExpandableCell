@@ -6,8 +6,7 @@
 - Using Protocol to set, the expand/collapse function can be easily realized without affecting the native UITableViewCell function.
 - 使用Protocol來設定，在不影響原生的UITableViewCell功能之下，能簡單的實現展開 / 折疊的功能。
 
-### Achievements display - 成果展示
-![WWExpandableCell](./Example1.gif) ![WWExpandableCell](./Example2.gif)
+https://github.com/user-attachments/assets/c757bf44-65af-4a2e-9bcf-7faa1eb7a8fc
 
 ### [Installation with Swift Package Manager - 安裝方式](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/使用-spm-安裝第三方套件-xcode-11-新功能-2c4ffcf85b4b)
 
