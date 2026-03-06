@@ -66,7 +66,7 @@ public extension WWCellExpandable {
     ///   - duration: 動畫時間
     ///   - delay: 動畫延遲時間
     ///   - options: 動畫效果
-    ///   - completion: 動畫完成
+    ///   - completion: 動畫完成後展開狀態
     static func exchangeExpandState(_ tableView: UITableView, indexPath: IndexPath, isSingle: Bool, duration: TimeInterval = 0.3, delay: TimeInterval = 0, options: UIView.AnimationOptions = [], completion: ((Bool) -> Void)? = nil) {
         
         let visibleCells = tableView.visibleCells.compactMap { cell -> WWCellExpandable? in
@@ -75,12 +75,13 @@ public extension WWCellExpandable {
         }
         
         let selectedCell = visibleCells.first { $0.indexPath == indexPath }
+        var isExpanded = false
         
         tableView.performBatchUpdates ({
-            let isExpanded = Self.expandedRowAction(selectedCell: selectedCell)
+            isExpanded = Self.expandedRowAction(selectedCell: selectedCell)
             if (isSingle) { Self.singleExpandedRowAction(visibleCells: visibleCells, selectedIndex: indexPath, isExpanded: isExpanded) }
         }, completion: { isFinsished in
-            completion?(isFinsished)
+            if (isFinsished) { completion?(isExpanded) }
         })
     }
 }

@@ -13,7 +13,7 @@
 
 ```bash
 dependencies: [
-    .package(url: "https://github.com/William-Weng/WWExpandableCell.git", .upToNextMajor(from: "1.2.0"))
+    .package(url: "https://github.com/William-Weng/WWExpandableCell.git", .upToNextMajor(from: "1.2.1"))
 ]
 ```
 
