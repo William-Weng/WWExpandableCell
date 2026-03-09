@@ -12,7 +12,7 @@ https://github.com/user-attachments/assets/c757bf44-65af-4a2e-9bcf-7faa1eb7a8fc
 
 ```bash
 dependencies: [
-    .package(url: "https://github.com/William-Weng/WWExpandableCell.git", .upToNextMajor(from: "1.2.1"))
+    .package(url: "https://github.com/William-Weng/WWExpandableCell.git", .upToNextMajor(from: "1.2.2"))
 ]
 ```
 
@@ -25,7 +25,7 @@ dependencies: [
 |-|-|
 |expandedCells(section:rowCount:)|設定預設值 => 那個section的cell們預設是打開的|
 |expandedCell(section:row:)|設定預設值 => 那一個IndexPath是打開的|
-|exchangeExpandState(_:indexPath:isSingle:duration:delay:options:completion:)|交換展開狀態|
+|exchangeExpandState(_:indexPath:isSingle:duration:delay:options:batchUpdates:completion:)|交換展開狀態|
 
 ### Example - 程式範例
 ```swift

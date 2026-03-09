@@ -12,15 +12,18 @@ open class WWExpandView: UIView {}
 // MARK: - 可以折疊使用Cell的Protocol
 public protocol WWCellExpandable: UITableViewCell {
     
+    typealias ExpandRowsList = [Int: Set<IndexPath>]
+    typealias ExpandRowsListTuple = (ExpandRowsList, ExpandRowsList)
+
     static var identifier: String { get }
-    static var expandRowsList: [Int: Set<IndexPath>] { get set }
+    static var expandRowsList: ExpandRowsList { get set }
     
     var indexPath: IndexPath { get set }
     
-    static func exchangeExpandState(_ tableView: UITableView, indexPath: IndexPath, isSingle: Bool, duration: TimeInterval, delay: TimeInterval, options: UIView.AnimationOptions, completion: ((Bool) -> Void)?)
+    static func exchangeExpandState(_ tableView: UITableView, indexPath: IndexPath, isSingle: Bool, duration: TimeInterval, delay: TimeInterval, options: UIView.AnimationOptions, batchUpdates: ((Bool) -> Void)?, completion: ((ExpandRowsListTuple) -> Void)?)
     static func expandedCells(section: Int, rowCount: Int)
     static func expandedCell(section: Int, row: Int)
-
+    
     func expandView() -> WWExpandView?
 }
 
@@ -66,8 +69,9 @@ public extension WWCellExpandable {
     ///   - duration: 動畫時間
     ///   - delay: 動畫延遲時間
     ///   - options: 動畫效果
-    ///   - completion: 動畫完成後展開狀態
-    static func exchangeExpandState(_ tableView: UITableView, indexPath: IndexPath, isSingle: Bool, duration: TimeInterval = 0.3, delay: TimeInterval = 0, options: UIView.AnimationOptions = [], completion: ((Bool) -> Void)? = nil) {
+    ///   - batchUpdate: 動畫更新時狀態
+    ///   - completion: 動畫完成後的IndexPath變化
+    static func exchangeExpandState(_ tableView: UITableView, indexPath: IndexPath, isSingle: Bool, duration: TimeInterval = 0.3, delay: TimeInterval = 0, options: UIView.AnimationOptions = [], batchUpdates: ((Bool) -> Void)? = nil, completion: ((ExpandRowsListTuple) -> Void)? = nil) {
         
         let visibleCells = tableView.visibleCells.compactMap { cell -> WWCellExpandable? in
             guard let cell = cell as? WWCellExpandable else { return nil }
@@ -75,13 +79,14 @@ public extension WWCellExpandable {
         }
         
         let selectedCell = visibleCells.first { $0.indexPath == indexPath }
-        var isExpanded = false
+        let previousExpandRowsList = expandRowsList
         
         tableView.performBatchUpdates ({
-            isExpanded = Self.expandedRowAction(selectedCell: selectedCell)
+            let isExpanded = Self.expandedRowAction(selectedCell: selectedCell)
             if (isSingle) { Self.singleExpandedRowAction(visibleCells: visibleCells, selectedIndex: indexPath, isExpanded: isExpanded) }
+            batchUpdates?(isExpanded)
         }, completion: { isFinsished in
-            if (isFinsished) { completion?(isExpanded) }
+            completion?((previousExpandRowsList, expandRowsList))
         })
     }
 }

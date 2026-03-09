@@ -14,9 +14,10 @@
 		3DBCD88026F198F300522E3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DBCD87E26F198F300522E3B /* LaunchScreen.storyboard */; };
 		81550B7F2F5A74CE006D7EC1 /* WWExpandableCell in Frameworks */ = {isa = PBXBuildFile; productRef = 81550B7E2F5A74CE006D7EC1 /* WWExpandableCell */; };
 		81550B852F5A787D006D7EC1 /* WWExpandableCell in Frameworks */ = {isa = PBXBuildFile; productRef = 81550B842F5A787D006D7EC1 /* WWExpandableCell */; };
-		81550B882F5A7911006D7EC1 /* WWExpandableCell in Frameworks */ = {isa = PBXBuildFile; productRef = 81550B872F5A7911006D7EC1 /* WWExpandableCell */; };
 		8180BCBA2B313DAD007A6A71 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180BCB92B313DAD007A6A71 /* MyTableViewCell.swift */; };
 		818F6ECB2B3195B100F9184B /* WWExpandableCell in Frameworks */ = {isa = PBXBuildFile; productRef = 818F6ECA2B3195B100F9184B /* WWExpandableCell */; };
+		81E6D3C02F5E748F00D1BE26 /* WWExpandableCell in Frameworks */ = {isa = PBXBuildFile; productRef = 81E6D3BF2F5E748F00D1BE26 /* WWExpandableCell */; };
+		81E6D3C32F5E74D900D1BE26 /* WWExpandableCell in Frameworks */ = {isa = PBXBuildFile; productRef = 81E6D3C22F5E74D900D1BE26 /* WWExpandableCell */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +38,8 @@
 			files = (
 				81550B7F2F5A74CE006D7EC1 /* WWExpandableCell in Frameworks */,
 				818F6ECB2B3195B100F9184B /* WWExpandableCell in Frameworks */,
-				81550B882F5A7911006D7EC1 /* WWExpandableCell in Frameworks */,
+				81E6D3C32F5E74D900D1BE26 /* WWExpandableCell in Frameworks */,
+				81E6D3C02F5E748F00D1BE26 /* WWExpandableCell in Frameworks */,
 				81550B852F5A787D006D7EC1 /* WWExpandableCell in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,7 +137,8 @@
 				818F6ECA2B3195B100F9184B /* WWExpandableCell */,
 				81550B7E2F5A74CE006D7EC1 /* WWExpandableCell */,
 				81550B842F5A787D006D7EC1 /* WWExpandableCell */,
-				81550B872F5A7911006D7EC1 /* WWExpandableCell */,
+				81E6D3BF2F5E748F00D1BE26 /* WWExpandableCell */,
+				81E6D3C22F5E74D900D1BE26 /* WWExpandableCell */,
 			);
 			productName = Example;
 			productReference = 3DBCD87026F198EF00522E3B /* Example.app */;
@@ -166,7 +169,7 @@
 			);
 			mainGroup = 3DBCD86726F198EF00522E3B;
 			packageReferences = (
-				81550B862F5A7911006D7EC1 /* XCRemoteSwiftPackageReference "WWExpandableCell" */,
+				81E6D3C12F5E74D900D1BE26 /* XCRemoteSwiftPackageReference "WWExpandableCell" */,
 			);
 			productRefGroup = 3DBCD87126F198EF00522E3B /* Products */;
 			projectDirPath = "";
@@ -413,12 +416,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		81550B862F5A7911006D7EC1 /* XCRemoteSwiftPackageReference "WWExpandableCell" */ = {
+		81E6D3C12F5E74D900D1BE26 /* XCRemoteSwiftPackageReference "WWExpandableCell" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/William-Weng/WWExpandableCell";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 1.2.0;
+				minimumVersion = 1.2.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -432,13 +435,17 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = WWExpandableCell;
 		};
-		81550B872F5A7911006D7EC1 /* WWExpandableCell */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 81550B862F5A7911006D7EC1 /* XCRemoteSwiftPackageReference "WWExpandableCell" */;
-			productName = WWExpandableCell;
-		};
 		818F6ECA2B3195B100F9184B /* WWExpandableCell */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = WWExpandableCell;
+		};
+		81E6D3BF2F5E748F00D1BE26 /* WWExpandableCell */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WWExpandableCell;
+		};
+		81E6D3C22F5E74D900D1BE26 /* WWExpandableCell */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 81E6D3C12F5E74D900D1BE26 /* XCRemoteSwiftPackageReference "WWExpandableCell" */;
 			productName = WWExpandableCell;
 		};
 /* End XCSwiftPackageProductDependency section */
